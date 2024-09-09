@@ -15,7 +15,7 @@ public class WebserviceApplication {
 //		LawData lawData = context.getBean(LawData.class);
 //		lawData.showName();
 		MainApp mainApp = context.getBean(MainApp.class);
-		mainApp.showName();
+		//mainApp.showName();
 
 
 	}
