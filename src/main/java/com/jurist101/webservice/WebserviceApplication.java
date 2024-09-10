@@ -11,13 +11,6 @@ public class WebserviceApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(WebserviceApplication.class, args);
-
-//		LawData lawData = context.getBean(LawData.class);
-//		lawData.showName();
-		MainApp mainApp = context.getBean(MainApp.class);
-		//mainApp.showName();
-
-
 	}
 
 }

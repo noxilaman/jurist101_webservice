@@ -27,7 +27,7 @@ public class MainAppService {
 
     public List<MainApp> getListMainAppByType(String typeName){
 
-        return mainAppRepo.findAllByType(typeName);
+        return mainAppRepo.findAll();
     }
 
 
