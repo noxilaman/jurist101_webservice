@@ -1,13 +1,13 @@
 package com.jurist101.webservice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,5 +31,9 @@ public class MainApp {
     private String group_app;
     private String icon_app;
     private String short_name;
+
+    @OneToMany
+    @JoinColumn(name = "app_id")
+    private List<Law> laws;
 
 }
