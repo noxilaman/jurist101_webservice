@@ -18,8 +18,6 @@ import org.springframework.stereotype.Component;
 @Table(name = "tb_app")
 public class MainApp {
 
-
-
     @Id
     private int id;
     private String name;
@@ -33,6 +31,5 @@ public class MainApp {
     private String group_app;
     private String icon_app;
     private String short_name;
-
 
 }
