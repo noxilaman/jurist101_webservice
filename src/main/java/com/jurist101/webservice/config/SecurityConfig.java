@@ -44,14 +44,14 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService(){
+    //@Bean
+    //public UserDetailsService userDetailsService(){
 
 
 
-        UserDetails admin = User.withDefaultPasswordEncoder().username("admin").password("1234").roles("Admin").build();
-        UserDetails user = User.withDefaultPasswordEncoder().username("user").password("1234").roles("User").build();
+        //UserDetails admin = User.withDefaultPasswordEncoder().username("admin").password("1234").roles("Admin").build();
+       // UserDetails user = User.withDefaultPasswordEncoder().username("user").password("1234").roles("User").build();
 
-        return new InMemoryUserDetailsManager(user,admin);
-    }
+       // return new InMemoryUserDetailsManager(user,admin);
+    //}admin
 }
