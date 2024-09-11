@@ -2,9 +2,11 @@ package com.jurist101.webservice.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
 @Entity
 @Table(name="tb_lawdata")

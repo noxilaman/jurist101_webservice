@@ -16,9 +16,7 @@ public class LawService {
     @Autowired
     private LawRepository repo;
 
-    public Page<Law> getAllLaw(){
-//        Pageable limit = PageRequest.of(0,10);
-//        return repo.findAll(limit);
-        return null;
+    public Page<Law> getAllLaw(Pageable pageable){
+        return repo.findAll(pageable);
     }
 }

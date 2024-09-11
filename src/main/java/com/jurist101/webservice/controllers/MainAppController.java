@@ -13,13 +13,13 @@ import java.util.List;
 @Controller
 public class MainAppController {
 
-    @Autowired
-    private MainAppService service;
-
-    @GetMapping("mainapps")
-    @ResponseBody
-    public List<MainApp> getAllMainApp(){
-        return service.getListMainApp();
-    }
+//    @Autowired
+//    private MainAppService service;
+//
+//    @GetMapping("mainapps")
+//    @ResponseBody
+//    public List<MainApp> getAllMainApp(){
+//        return service.getListMainApp();
+//    }
 
 }

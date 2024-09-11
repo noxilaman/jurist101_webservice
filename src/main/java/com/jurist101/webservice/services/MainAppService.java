@@ -10,25 +10,25 @@ import java.util.List;
 @Service
 public class MainAppService {
 
-    public MainAppRepository getMainAppRepo() {
-        return mainAppRepo;
-    }
-
-    @Autowired
-    public void setMainAppRepo(MainAppRepository mainAppRepo) {
-        this.mainAppRepo = mainAppRepo;
-    }
-
-    private MainAppRepository mainAppRepo;
-
-    public List<MainApp> getListMainApp(){
-        return mainAppRepo.findAll();
-    }
-
-    public List<MainApp> getListMainAppByType(String typeName){
-
-        return mainAppRepo.findAll();
-    }
+//    public MainAppRepository getMainAppRepo() {
+//        return mainAppRepo;
+//    }
+//
+//    @Autowired
+//    public void setMainAppRepo(MainAppRepository mainAppRepo) {
+//        this.mainAppRepo = mainAppRepo;
+//    }
+//
+//    private MainAppRepository mainAppRepo;
+//
+//    public List<MainApp> getListMainApp(){
+//        return mainAppRepo.findAll();
+//    }
+//
+//    public List<MainApp> getListMainAppByType(String typeName){
+//
+//        return mainAppRepo.findAll();
+//    }
 
 
 }

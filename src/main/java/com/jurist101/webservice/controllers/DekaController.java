@@ -12,12 +12,12 @@ import java.util.List;
 @Controller
 public class DekaController {
 
-    @Autowired
-    private DekaService service;
-
-    @GetMapping("dekas")
-    @ResponseBody
-    public List<Deka> getAll(){
-        return service.getAllDaka();
-    }
+//    @Autowired
+//    private DekaService service;
+//
+//    @GetMapping("dekas")
+//    @ResponseBody
+//    public List<Deka> getAll(){
+//        return service.getAllDaka();
+//    }
 }

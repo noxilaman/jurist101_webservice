@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -31,9 +32,5 @@ public class MainApp {
     private String group_app;
     private String icon_app;
     private String short_name;
-
-    @OneToMany
-    @JoinColumn(name = "app_id")
-    private List<Law> laws;
 
 }

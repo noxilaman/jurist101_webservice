@@ -14,6 +14,6 @@ public class DekaService {
     private DekaRepository repo;
 
     public List<Deka> getAllDaka(){
-        return repo.findAll();
+        return null;
     }
 }
