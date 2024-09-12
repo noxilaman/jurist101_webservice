@@ -32,7 +32,7 @@ public class User {
     private String  registration_ip;
     private Timestamp created_at;
     private Timestamp updated_at;
-    private String flags;
+    private Integer flags;
     private Timestamp last_login_at;
     private Integer  i_role;
     private String name;
