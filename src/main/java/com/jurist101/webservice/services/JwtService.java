@@ -70,7 +70,9 @@ public class JwtService {
     }
 
     private Claims extractAllClaim(String token) {
-        return Jwts.parser().setSigningKey(getKey()).build().parseClaimsJws(token).getBody();
+        return Jwts.parserBuilder()
+                .setSigningKey(getKey())
+                .build().parseClaimsJws(token).getBody();
     }
 
     public boolean validationToken(String token, UserDetails userDetails) {
