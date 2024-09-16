@@ -19,4 +19,5 @@ public class LawService {
     public Page<Law> getAllLaw(Pageable pageable){
         return repo.findAll(pageable);
     }
+
 }

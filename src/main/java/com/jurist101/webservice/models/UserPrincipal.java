@@ -48,6 +48,14 @@ public class UserPrincipal implements UserDetails {
     }
 
     @Override
+    public String toString() {
+        return "UserPrincipal{" +
+                "user=" + user.getUsername() +
+                "ROLE=" + user.getI_role() +
+                '}';
+    }
+
+    @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
     }

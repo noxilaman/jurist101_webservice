@@ -1,5 +1,6 @@
 package com.jurist101.webservice.services;
 
+import com.jurist101.webservice.models.UserPrincipal;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

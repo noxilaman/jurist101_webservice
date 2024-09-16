@@ -29,7 +29,8 @@ public class MainApp {
     private String android_store;
     private String app_desc;
     private String android_desc;
-    private String group_app;
+    @Column(name = "group_app")
+    private String groupApp;
     private String icon_app;
     private String short_name;
 
