@@ -23,8 +23,6 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-
-
     private String secretKey;
 
     public JwtService(){

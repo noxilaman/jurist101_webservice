@@ -24,10 +24,10 @@ public class MainAppController {
     }
 
     @GetMapping("mainappByGroup/{groupApp}/Search")
-    public List<MainApp> getMainAppByGroupApp(@PathVariable(value="groupApp") String group_app){
+    public Page<MainApp> getMainAppByGroupApp(@PathVariable(value="groupApp") String group_app, Pageable pageable){
         System.out.println("getMainAppByGroupApp");
-        // return service.getListMainAppByType(groupApp);
-        return null;
+        return service.getListMainAppByType(group_app, pageable);
+        //return null;
     }
 
     @GetMapping("mainapp/{appId}")
@@ -36,6 +36,10 @@ public class MainAppController {
         return service.getMainAppById(Integer.parseInt(id));
     }
 
-
+    @GetMapping("mainappByName/{name}/Search")
+    public Page<MainApp> getMainAppByName(@PathVariable(value="name") String name, Pageable pageable){
+        return service.getListMainAppByName(name, pageable);
+        //return null;
+    }
 
 }

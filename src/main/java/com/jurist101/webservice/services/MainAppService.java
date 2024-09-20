@@ -29,18 +29,18 @@ public class MainAppService {
         return mainAppRepo.findAll(page);
     }
 
-    public List<MainApp> getListMainAppByType(String group_name){
-        return mainAppRepo.findByGroupApp(group_name);
+    public Page<MainApp> getListMainAppByType(String group_name, Pageable pageable){
+        return mainAppRepo.findByGroupApp(group_name, pageable);
     }
 
     public Optional<MainApp> getMainAppById(int id) {
         return mainAppRepo.findById(id);
     }
-//
-//    public List<MainApp> getListMainAppByType(String typeName){
-//
-//        return mainAppRepo.findAll();
-//    }
+
+    public Page<MainApp> getListMainAppByName(String name, Pageable pageable){
+        return mainAppRepo.findByNameContaining(name, pageable);
+    }
+
 
 
 }
