@@ -26,6 +26,8 @@ public class LawCat {
     @ManyToOne
     @JoinColumn(name = "i_parent_id")
     private LawCat parent;
+    @Column(name = "i_parent_id", insertable = false, updatable = false)
+    private int iParentId;
 
     @Column(name = "i_seq")
     private int iSeq;

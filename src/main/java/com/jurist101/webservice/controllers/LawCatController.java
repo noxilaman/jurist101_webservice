@@ -15,8 +15,13 @@ public class LawCatController {
     @Autowired
     private LawCatService service;
 
-    @GetMapping("lawcat/{appId}")
+    @GetMapping("lawcat/app/{appId}")
     public Page<LawCat> getLawCatByAppId(@PathVariable(value="appId") String app_id, Pageable pageable){
         return service.getListLawCatByAppId(Integer.parseInt(app_id), pageable);
+    }
+
+    @GetMapping("lawcat/cat/{catId}")
+    public Page<LawCat> getLawCatByCatId(@PathVariable(value="catId") String cat_id, Pageable pageable){
+        return service.getListLawCatByCatId(Integer.parseInt(cat_id), pageable);
     }
 }

@@ -16,4 +16,8 @@ public class LawCatService {
     public Page<LawCat> getListLawCatByAppId(int i, Pageable pageable) {
         return repo.findByAppId(i, pageable);
     }
+
+    public Page<LawCat> getListLawCatByCatId(int i, Pageable pageable) {
+        return repo.findByParentId(i, pageable);
+    }
 }
