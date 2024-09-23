@@ -20,4 +20,11 @@ public class LawService {
         return repo.findAll(pageable);
     }
 
+    public Page<Law> getAllLawsByAppId(int i, Pageable pageable) {
+        return repo.findByAppId(i, pageable);
+    }
+
+    public Page<Law> getAllLawsByAppIdandCatId(int i, int i1, Pageable pageable) {
+        return repo.findByAppIdAndCatId(i, i1, pageable);
+    }
 }

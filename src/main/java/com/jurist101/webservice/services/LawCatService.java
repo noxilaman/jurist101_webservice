@@ -20,4 +20,8 @@ public class LawCatService {
     public Page<LawCat> getListLawCatByCatId(int i, Pageable pageable) {
         return repo.findByParentId(i, pageable);
     }
+
+    public Page<LawCat> getListLawCatByAppIdandKeyword(int i, String keyword, Pageable pageable) {
+        return repo.findByAppIdAndNameContaining(i, keyword, pageable);
+    }
 }

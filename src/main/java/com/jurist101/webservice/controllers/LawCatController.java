@@ -24,4 +24,9 @@ public class LawCatController {
     public Page<LawCat> getLawCatByCatId(@PathVariable(value="catId") String cat_id, Pageable pageable){
         return service.getListLawCatByCatId(Integer.parseInt(cat_id), pageable);
     }
+
+    @GetMapping("lawcat/{appId}/Search/{keyword}/")
+    public Page<LawCat> getLawCatByAppIdandKeyword(@PathVariable(value="appId") String appId,@PathVariable(value="keyword") String keyword, Pageable pageable){
+        return service.getListLawCatByAppIdandKeyword(Integer.parseInt(appId), keyword, pageable);
+    }
 }

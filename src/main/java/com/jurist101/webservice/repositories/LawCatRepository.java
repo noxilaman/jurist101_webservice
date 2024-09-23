@@ -15,4 +15,6 @@ public interface LawCatRepository extends PagingAndSortingRepository<LawCat, Int
 
     @Query("SELECT l FROM LawCat l WHERE l.iParentId = :parentId ORDER BY l.iLevel ASC,l.iSeq ASC")
     Page<LawCat> findByParentId(int parentId, Pageable pageable);
+
+    Page<LawCat> findByAppIdAndNameContaining(int i, String keyword, Pageable pageable);
 }

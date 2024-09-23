@@ -15,13 +15,17 @@ import org.springframework.stereotype.Component;
 public class Law {
     @Id
     private int i_id;
-    private int i_no;
-    private int i_subno;
-    private String c_name;
+    @Column(name = "i_no")
+    private int no;
+    @Column(name = "i_subno")
+    private int subno;
+    @Column(name = "c_name")
+    private String name;
     private String c_desc;
     private String c_comment;
     private String c_url;
-    private int i_lawcat;
+    @Column(name = "i_lawcat")
+    private int catId;
     private int i_lawno;
     private String important_keys;
     private String internal_factor;
@@ -31,4 +35,7 @@ public class Law {
     @ManyToOne
     @JoinColumn(name = "app_id")
     private MainApp mainapp;
+
+    @Column(name = "app_id", insertable = false, updatable = false)
+    private int appId;
 }

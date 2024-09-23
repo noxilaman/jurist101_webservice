@@ -26,6 +26,7 @@ public class LawCat {
     @ManyToOne
     @JoinColumn(name = "i_parent_id")
     private LawCat parent;
+
     @Column(name = "i_parent_id", insertable = false, updatable = false)
     private int iParentId;
 
@@ -33,7 +34,7 @@ public class LawCat {
     private int iSeq;
 
     @Column(name = "c_name")
-    private String cName;
+    private String name;
     @Column(name = "c_desc")
     private String cDesc;
     @Column(name = "i_level")
