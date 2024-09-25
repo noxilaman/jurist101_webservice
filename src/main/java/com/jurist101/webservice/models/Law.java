@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Data
 @Component
 @Entity
@@ -21,8 +23,10 @@ public class Law {
     private int subno;
     @Column(name = "c_name")
     private String name;
-    private String c_desc;
-    private String c_comment;
+    @Column(name = "c_desc")
+    private String desc;
+    @Column(name = "c_comment")
+    private String comment;
     private String c_url;
     @Column(name = "i_lawcat")
     private int catId;
@@ -38,4 +42,14 @@ public class Law {
 
     @Column(name = "app_id", insertable = false, updatable = false)
     private int appId;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "tb_deka_law",
+            joinColumns = {
+                    @JoinColumn(name = "lawdata_id", referencedColumnName = "i_id",
+                            nullable = true,insertable=false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "deka_id", referencedColumnName = "id",
+                            nullable = true,insertable=false, updatable = false)})
+    private List<Deka> dekas;
 }

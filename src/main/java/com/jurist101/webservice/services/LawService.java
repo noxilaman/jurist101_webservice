@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LawService {
@@ -26,5 +27,17 @@ public class LawService {
 
     public Page<Law> getAllLawsByAppIdandCatId(int i, int i1, Pageable pageable) {
         return repo.findByAppIdAndCatId(i, i1, pageable);
+    }
+
+    public Page<Law> getAllLawsByAppIdandKeyword(int i, String keyword, Pageable pageable) {
+        return repo.findByAppIdAndNameContaining(i, keyword, pageable);
+    }
+
+    public Optional<Law> getLawById(int i) {
+        return repo.findById((long) i);
+    }
+
+    public Page<Law> getLawsByDekaId(int i, Pageable pageable) {
+        return repo.findByDekaId(i, pageable);
     }
 }
