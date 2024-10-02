@@ -32,4 +32,9 @@ public class DekaController {
     public Page<Deka> getDekaByLawId(@PathVariable(value="law_id") String law_id, Pageable pageable){
         return service.getDekaByLawId(Integer.parseInt(law_id), pageable);
     }
+
+    @GetMapping("dekas/search/{keyword}")
+    public Page<Deka> getDekaByKeyword(@PathVariable(value="keyword") String keyword, Pageable pageable){
+        return service.getDekaByKeyword(keyword, pageable);
+    }
 }

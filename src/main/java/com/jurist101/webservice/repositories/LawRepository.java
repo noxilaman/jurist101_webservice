@@ -19,10 +19,11 @@ public interface LawRepository extends PagingAndSortingRepository<Law, Long>,Cru
 
     @Query("SELECT l FROM Law l WHERE l.appId = :i and l.catId = :i1 ORDER BY l.no ASC,l.subno ASC")
     Page<Law> findByAppIdAndCatId(int i, int i1, Pageable pageable);
+
     @Query("SELECT l FROM Law l WHERE l.appId = :i and (l.name like '%:keyword%' or l.desc like '%:keyword%' or l.comment like '%:keyword%' or  l.no = :keyword or  l.subno = :keyword)  ORDER BY l.no ASC,l.subno ASC")
     Page<Law> findByAppIdAndNameContaining(int i, String keyword, Pageable pageable);
 
-    @Query("SELECT l FROM Law l JOIN l.dekas d WHERE d.i_id = :i")
+    @Query("SELECT l FROM Law l JOIN l.dekas d WHERE d.id = :i")
     Page<Law> findByDekaId(int i, Pageable pageable);
     //List<Law> findByAppId(@Param("AppId") int app_id);SELECT u FROM User u WHERE u.email LIKE '%email1%'
     //    or  u.email LIKE '%email2%'

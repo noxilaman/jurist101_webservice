@@ -28,4 +28,8 @@ public class DekaService {
     public Page<Deka> getDekaByLawId(int lawId, Pageable pageable) {
         return repo.findByLawId(lawId, pageable);
     }
+
+    public Page<Deka> getDekaByKeyword(String keyword, Pageable pageable) {
+        return repo.findByNameContaining(keyword, pageable);
+    }
 }

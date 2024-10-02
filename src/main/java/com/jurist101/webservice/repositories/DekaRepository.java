@@ -20,4 +20,7 @@ public interface DekaRepository extends PagingAndSortingRepository<Deka,Integer>
 
     @Query("SELECT d FROM Deka d JOIN d.laws l WHERE l.i_id = :lawId")
     Page<Deka> findByLawId(int lawId, Pageable pageable);
+
+    @Query("SELECT d FROM Deka d WHERE d.name like '%:keyword%' or d.desc like '%:keyword%' or d.comments like '%:keyword%' or  d.no = :keyword or  d.subno = :keyword ORDER BY d.no ASC, d.subno ASC")
+    Page<Deka> findByNameContaining(String keyword, Pageable pageable);
 }
